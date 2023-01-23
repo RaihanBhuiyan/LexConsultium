@@ -25,12 +25,11 @@ export default function Signup() {
     axiosClient.post('/signup' , payload)
       .then(({data}) => {
         setUser(data.user)
-        setToken(data.setToken)
+        setToken(data.token)
       })
       .catch(err => {
         const response = err.response;
         if(response && response.status == 422){
-          // console.log(response.data.errors);
           setErrors(response.data.errors)
         }
       })
@@ -44,7 +43,7 @@ export default function Signup() {
             {Object.keys(errors).map(key => (
               <p key={key}>{errors[key][0]}</p>
             ))}
-          </div>
+            </div>
           }
           <input ref={nameRef} type='text' placeholder='Full Name' />
           <input ref={emailRef} type='email' placeholder='Email Address' />
