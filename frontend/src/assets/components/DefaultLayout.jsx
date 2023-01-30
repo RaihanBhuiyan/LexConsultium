@@ -3,6 +3,8 @@ import { Link, Navigate, Outlet } from 'react-router-dom'
 import axiosClient from '../../axios-client'
 import { useStateConText } from '../../contexts/ContextProvider'
 
+import '../../index.css'
+
 export default function DefaultLayout() {
   const {user , token , notification , setUser ,setToken} = useStateConText()
 
