@@ -30,11 +30,9 @@ export default function Home() {
                     <b>Success</b>
                   </span>
                   TO GROWUP</h3>
-                <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae </p>
-                <p>Parchitect beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                  fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-                  qui dolorem</p>
+                <p>We are a full-service income tax, accounting and notary public firm offering personalized services tailored to your needs</p>
+                <p>Our experienced professionals provide high quality and cost-effective services that help you meet your financial goals.</p>
+                  
                 <a href="about-us.html" className="cr-btn">
                   <span>Read More</span>
                 </a>

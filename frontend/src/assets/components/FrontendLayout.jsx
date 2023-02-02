@@ -6,7 +6,7 @@ import Footer from './frontend/Footer';
 export default function FrontendLayout() {
   return (
     <>
-        <div class="fakeloader"></div>
+        <div className="fakeloader"></div>
         <Header></Header>
           <Outlet></Outlet>
         <Footer></Footer>
