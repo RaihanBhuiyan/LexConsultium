@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-
+import { Link } from 'react-router-dom';
 export default function Header() {
   return (
 
@@ -20,7 +20,9 @@ export default function Header() {
 						</ul>
 						<div className="header__top__button">
 							<a className="cr-btn cr-btn--lg" href="appointment.php">
-								<span>Make an appointment</span>
+								<Link className='cr-btn cr-btn--lg'  to={'/login'}>
+									User Login
+								</Link>
 							</a>
 						</div>
 					</div>
