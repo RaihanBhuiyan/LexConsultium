@@ -31,7 +31,13 @@ export default function DefaultLayout() {
     <div id="defaultLayout">
       <aside>
         <Link to="/dashboard" > Dashboard </Link>  
+        {/* <Link to="/users" > New Documents Entry</Link>  
+        <Link to="/dashboard" > Daily Transaction </Link>  
+        <Link to="/dashboard" > Library </Link>   */}
         <Link to="/users" > Users </Link>  
+        {/* <Link to="/users" > Business Type </Link>  
+        <Link to="/users" > Ledger Entry</Link>  
+        <Link to="/users" > Ledger Entry</Link>   */}
       </aside>
       <div className='content'>
         <header>
