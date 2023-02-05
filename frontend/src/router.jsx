@@ -9,6 +9,10 @@ import NotFound from "./views/NotFound";
 import Signup from "./views/Signup";
 import UserForm from "./views/UserForm";
 import Users from "./views/Users";
+import BusinessType from "./assets/components/backend/BusinessType";
+import BusinessTypeForm from "./assets/components/backend/BusinessTypeForm";
+import LedgerType from "./assets/components/backend/LedgerType";
+import LedgerTypeForm from "./assets/components/backend/LedgerTypeForm";
 
 const router = createBrowserRouter([
     {
@@ -44,7 +48,23 @@ const router = createBrowserRouter([
             {
                 path: '/users/:id',
                 element: <UserForm key="userUpdate"/>
-            }         
+            },
+            {
+                path: '/businessType',
+                element: <BusinessType></BusinessType>
+            },   
+            {
+                path: '/businessType/:id',
+                element: <BusinessTypeForm key="userUpdate"/>
+            }, 
+            {
+                path: '/ledgerType',
+                element: <LedgerType></LedgerType>
+            },
+            {
+                path: '/ledgerType/:id',
+                element: <LedgerTypeForm key="userUpdate"/>
+            },                                 
         ]        
     },
     {

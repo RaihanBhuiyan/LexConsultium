@@ -3,7 +3,7 @@ import { Link, Navigate, Outlet } from 'react-router-dom'
 import axiosClient from '../../axios-client'
 import { useStateConText } from '../../contexts/ContextProvider'
 
-// import '../../index2.css'
+import '../../index2.css'
 
 export default function DefaultLayout() {
   const {user , token , notification , setUser ,setToken} = useStateConText()
@@ -35,9 +35,8 @@ export default function DefaultLayout() {
         <Link to="/dashboard" > Daily Transaction </Link>  
         <Link to="/dashboard" > Library </Link>   */}
         <Link to="/users" > Users </Link>  
-        {/* <Link to="/users" > Business Type </Link>  
-        <Link to="/users" > Ledger Entry</Link>  
-        <Link to="/users" > Ledger Entry</Link>   */}
+        <Link to="/businessType" > Business Type </Link>  
+        <Link to="/ledgerType" > Ledger Entry</Link> 
       </aside>
       <div className='content'>
         <header>
