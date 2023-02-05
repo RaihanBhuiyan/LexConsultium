@@ -2,14 +2,14 @@
 
 namespace App\Repositories;
 
-use App\Models\Employee;
+use App\Models\AccountsLedger;
 use App\Repositories\BaseRepository;
 
-class EmployeeRepository extends BaseRepository
+class AccountsLedgerRepository extends BaseRepository
 {
     protected $fieldSearchable = [
-            //
-    ];  
+        
+    ];
 
     public function getFieldsSearchable(): array
     {
@@ -18,6 +18,6 @@ class EmployeeRepository extends BaseRepository
 
     public function model(): string
     {
-        return Employee::class;
+        return AccountsLedger::class;
     }
 }

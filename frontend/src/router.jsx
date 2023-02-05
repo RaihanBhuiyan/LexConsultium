@@ -13,6 +13,10 @@ import BusinessType from "./assets/components/backend/BusinessType";
 import BusinessTypeForm from "./assets/components/backend/BusinessTypeForm";
 import LedgerType from "./assets/components/backend/LedgerType";
 import LedgerTypeForm from "./assets/components/backend/LedgerTypeForm";
+import Documents from "./assets/components/backend/Documents";
+import DocumentsForm from "./assets/components/backend/DocumentsForm";
+import DailyTransaction from "./assets/components/backend/DailyTransaction";
+import DailyTransactionForm from "./assets/components/backend/DailyTransactionForm";
 
 const router = createBrowserRouter([
     {
@@ -64,7 +68,24 @@ const router = createBrowserRouter([
             {
                 path: '/ledgerType/:id',
                 element: <LedgerTypeForm key="userUpdate"/>
-            },                                 
+            }, 
+            {
+                path: '/documents',
+                element: <Documents></Documents>
+            },
+            {
+                path: '/documents/:id',
+                element: <DocumentsForm key="userUpdate"/>
+            },   
+            {
+                path: '/daily_transaction',
+                element: <DailyTransaction></DailyTransaction>
+            },
+            {
+                path: '/daily_transaction/:id',
+                element: <DailyTransactionForm key="userUpdate"/>
+            },                      
+            
         ]        
     },
     {

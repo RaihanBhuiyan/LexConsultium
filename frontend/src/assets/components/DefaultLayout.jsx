@@ -34,6 +34,8 @@ export default function DefaultLayout() {
         {/* <Link to="/users" > New Documents Entry</Link>  
         <Link to="/dashboard" > Daily Transaction </Link>  
         <Link to="/dashboard" > Library </Link>   */}
+        <Link to="/documents" > Documents </Link>  
+        <Link to="/daily_transaction" > Daily Transaction </Link>  
         <Link to="/users" > Users </Link>  
         <Link to="/businessType" > Business Type </Link>  
         <Link to="/ledgerType" > Ledger Entry</Link> 

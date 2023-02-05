@@ -22,6 +22,9 @@ Route::middleware('auth:sanctum')->group(function(){
     }); 
     Route::post('/logout' , [\App\Http\Controllers\Api\AuthController::class,'logout']);
     Route::apiResource('/users' , UserController::class);
+    Route::resource('business_types', App\Http\Controllers\API\BusinessTypesAPIController::class);    
+    Route::resource('accounts-ledgers', App\Http\Controllers\API\AccountsLedgerAPIController::class)
+    ->except(['create', 'edit']);    
 });
 Route::post('/signup' , [\App\Http\Controllers\Api\AuthController::class, 'signup']);
 Route::post('/login' , [\App\Http\Controllers\Api\AuthController::class, 'login']);

@@ -5,23 +5,26 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axiosClient from '../../../axios-client';
 import { useStateConText } from '../../../contexts/ContextProvider'
 
-export default function BusinessTypeForm() {
+export default function DailyTransactionForm() {
   const {id} = useParams()
   const navigate = useNavigate();
   const [loading , setLoading] = useState(false)
   const [errors , setErrors] = useState(null);  
   const {setNotification} = useStateConText()
-  const [getData, setData] = useState({
+  const [user, setUser] = useState({
     id: null,
-    b_name: '',
+    name: '',
+    email: '',
+    password: '',
+    password_confirmation: '' 
   })
   if(id){
     useEffect( () =>{
       setLoading(true)
-      axiosClient.get(`/business_types/${id}`)
+      axiosClient.get(`/users/${id}`)
         .then(({data})=>{
           setLoading(false)
-          setData(data.data)
+          setUser(data.data)
           console.log(data);
         })
         .catch((err) => {
@@ -35,11 +38,11 @@ export default function BusinessTypeForm() {
   }  
   const onSubmit = (ev) =>{
     ev.preventDefault();
-    if(getData.id){
-      axiosClient.put(`/business_types/`+ getData.id ,getData)
+    if(user.id){
+      axiosClient.put(`/users/{user.id}` ,user)
         .then(() => {
-          setNotification('Business Type was successfully updated')
-          navigate('/businessType')
+          setNotification('User was successfully updated')
+          navigate('/users')
         })        
         .catch((err) => {
           setLoading(false)
@@ -49,10 +52,10 @@ export default function BusinessTypeForm() {
           }
         })
     }else{
-      axiosClient.post(`/business_types` ,getData)
+      axiosClient.post(`/users` ,user)
         .then(() => {
-          setNotification('New Business Type added successfully')
-          navigate('/businessType')
+          setNotification('New user added successfully')
+          navigate('/users')
         })        
         .catch((err) => {
           setLoading(false)
@@ -65,8 +68,8 @@ export default function BusinessTypeForm() {
   }
   return (
     <div>
-      {getData.id && <h1> Update Business Type</h1>}
-      {!getData.id && <h1>New Business Types</h1>}
+      {user.id && <h1> Update Daily Transaction</h1>}
+      {!user.id && <h1>New Transaction</h1>}
       {errors && <div className='alert'>
         {Object.keys(errors).map(key => (
           <p key={key}>{errors[key][0]}</p>
@@ -79,8 +82,10 @@ export default function BusinessTypeForm() {
         )}
         {!loading && 
           <form onSubmit={onSubmit}>
-            <input onChange={ev => setData({...getData, b_name: ev.target.value})} value={getData.b_name} placeholder='Business Type' />
-           
+            <input onChange={ev => setUser({...user, name: ev.target.value})} value={user.name} placeholder='name' />
+            {/* <input onChange={ev => setUser({...user, email: ev.target.value})} value={user.email} placeholder='Email' /> */}
+            {/* <input onChange={ev => setUser({...user, password: ev.target.value})} placeholder='Password' />
+            <input onChange={ev => setUser({...user, password_confirmation: ev.target.value})} placeholder='Password Confirmation' /> */}
             <button className='btn'>Save</button>          
           </form>
         }

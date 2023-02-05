@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axiosClient from '../../../axios-client';
-export default function BusinessType() {
+export default function Documents() {
   const [data , setData] = useState([]);
   const [loading , setLoading] = useState(false)
   
@@ -37,8 +37,8 @@ export default function BusinessType() {
   return (
     <div>
       <div style={{display: 'flex' ,justifyContent: 'space-between' , alignItems: 'center'}}>
-        <h1>Business Types</h1>
-        <Link to='/businessType/new' className='btn-add'>Add New</Link>
+        <h1>Documents</h1>
+        <Link to='/documents/new' className='btn-add'>Add New</Link>
       </div>
       <div className='card animated fadeinDown'>
         <table>
@@ -63,7 +63,7 @@ export default function BusinessType() {
                 <td>{u.id}</td>
                 <td>{u.b_name}</td>
                 <td>
-                  <Link className='btn-edit' to={'/businessType/'+u.id}>Edit</Link>
+                  <Link className='btn-edit' to={'/documents/'+u.id}>Edit</Link>
                   &nbsp;
                   <button onClick={ev => onDelete(u)} className="btn-delete">Delete</button>
                 </td>
