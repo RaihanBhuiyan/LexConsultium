@@ -17,7 +17,7 @@ class AccountsLedger extends Model
     ];
 
     public static array $rules = [
-        
+        'name' => 'required'
     ];
 
     

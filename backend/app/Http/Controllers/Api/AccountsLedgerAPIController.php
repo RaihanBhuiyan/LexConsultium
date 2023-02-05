@@ -9,6 +9,7 @@ use App\Repositories\AccountsLedgerRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
+use App\Http\Resources\LedgerResource;
 
 /**
  * Class AccountsLedgerAPIController
@@ -34,7 +35,9 @@ class AccountsLedgerAPIController extends AppBaseController
             $request->get('limit')
         );
 
-        return $this->sendResponse($accountsLedgers->toArray(), 'Accounts Ledgers retrieved successfully');
+        $accountsLedgers = LedgerResource::collection($accountsLedgers);
+        
+        return $this->sendResponse($accountsLedgers, 'Accounts Ledgers retrieved successfully');
     }
 
     /**

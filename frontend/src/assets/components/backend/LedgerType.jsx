@@ -13,7 +13,7 @@ export default function LedgerType() {
 
   const getUsers = () =>{
     setLoading(true)
-    axiosClient.get('/users')
+    axiosClient.get('/accounts-ledgers')
       .then(({data}) =>{
         setLoading(false)
         setUsers(data.data)
@@ -29,7 +29,7 @@ export default function LedgerType() {
     if(!window.confirm("Are you sure want to delete this user?")){
       return
     }
-    axiosClient.delete(`/users/${u.id}`)
+    axiosClient.delete(`/accounts-ledgers/${u.id}`)
       .then(() => {
         getUsers()
       })

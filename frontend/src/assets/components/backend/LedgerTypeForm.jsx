@@ -11,20 +11,17 @@ export default function LedgerTypeForm() {
   const [loading , setLoading] = useState(false)
   const [errors , setErrors] = useState(null);  
   const {setNotification} = useStateConText()
-  const [user, setUser] = useState({
+  const [getData, setData] = useState({
     id: null,
     name: '',
-    email: '',
-    password: '',
-    password_confirmation: '' 
   })
   if(id){
     useEffect( () =>{
       setLoading(true)
-      axiosClient.get(`/users/${id}`)
+      axiosClient.get(`/accounts-ledgers/${id}`)
         .then(({data})=>{
           setLoading(false)
-          setUser(data.data)
+          setData(data.data)
           console.log(data);
         })
         .catch((err) => {
@@ -38,11 +35,11 @@ export default function LedgerTypeForm() {
   }  
   const onSubmit = (ev) =>{
     ev.preventDefault();
-    if(user.id){
-      axiosClient.put(`/users/{user.id}` ,user)
+    if(getData.id){
+      axiosClient.put(`/accounts-ledgers/${id}` ,getData)
         .then(() => {
           setNotification('User was successfully updated')
-          navigate('/users')
+          navigate('/ledgerType')
         })        
         .catch((err) => {
           setLoading(false)
@@ -52,10 +49,10 @@ export default function LedgerTypeForm() {
           }
         })
     }else{
-      axiosClient.post(`/users` ,user)
+      axiosClient.post(`/accounts-ledgers` ,getData)
         .then(() => {
           setNotification('New user added successfully')
-          navigate('/users')
+          navigate('/ledgerType')
         })        
         .catch((err) => {
           setLoading(false)
@@ -68,8 +65,8 @@ export default function LedgerTypeForm() {
   }
   return (
     <div>
-      {user.id && <h1> Update Ledger Type</h1>}
-      {!user.id && <h1>New Ledger Types</h1>}
+      {getData.id && <h1> Update Ledger </h1>}
+      {!getData.id && <h1>New Ledger </h1>}
       {errors && <div className='alert'>
         {Object.keys(errors).map(key => (
           <p key={key}>{errors[key][0]}</p>
@@ -82,10 +79,7 @@ export default function LedgerTypeForm() {
         )}
         {!loading && 
           <form onSubmit={onSubmit}>
-            <input onChange={ev => setUser({...user, name: ev.target.value})} value={user.name} placeholder='name' />
-            {/* <input onChange={ev => setUser({...user, email: ev.target.value})} value={user.email} placeholder='Email' /> */}
-            {/* <input onChange={ev => setUser({...user, password: ev.target.value})} placeholder='Password' />
-            <input onChange={ev => setUser({...user, password_confirmation: ev.target.value})} placeholder='Password Confirmation' /> */}
+            <input onChange={ev => setData({...getData, name: ev.target.value})} value={getData.name} placeholder='name' />
             <button className='btn'>Save</button>          
           </form>
         }

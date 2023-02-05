@@ -13,7 +13,7 @@ export default function DailyTransaction() {
 
   const getUsers = () =>{
     setLoading(true)
-    axiosClient.get('/business_types')
+    axiosClient.get('/daily-transactions')
       .then(({data}) =>{
         setLoading(false)
         setData(data.data)
@@ -45,7 +45,9 @@ export default function DailyTransaction() {
           <thead>
             <tr>
               <th>ID</th >
-              <th>Busineess Type</th >
+              <th>Date</th >
+              <th>Ledger</th >
+              <th>Amount</th >
               <th>Actions</th >
             </tr>
           </thead>
@@ -61,7 +63,9 @@ export default function DailyTransaction() {
               
               <tr key={u.id}>
                 <td>{u.id}</td>
-                <td>{u.b_name}</td>
+                <td>{u.date}</td>
+                <td>{u.ledger.name}</td>
+                <td>{u.amount}</td>
                 <td>
                   <Link className='btn-edit' to={'/daily_transaction/'+u.id}>Edit</Link>
                   &nbsp;
