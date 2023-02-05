@@ -25,3 +25,7 @@ Route::middleware('auth:sanctum')->group(function(){
 });
 Route::post('/signup' , [\App\Http\Controllers\Api\AuthController::class, 'signup']);
 Route::post('/login' , [\App\Http\Controllers\Api\AuthController::class, 'login']);
+
+
+Route::resource('employees', App\Http\Controllers\API\EmployeeAPIController::class)
+    ->except(['create', 'edit']);
