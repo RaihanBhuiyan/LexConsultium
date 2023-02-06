@@ -1,7 +1,16 @@
 import axios from "axios";
 
+let host_name = window.location.hostname;
+
+
+let axiosBaseUrl = 'http://127.0.0.1:8000/api';
+if(host_name == "localhost") {
+    axiosBaseUrl = 'http://127.0.0.1:8000/api';
+}else{
+    axiosBaseUrl = 'http://lexconsultium.com/backend/api'
+}
 const axiosClient = axios.create({
-    baseURL: `http://127.0.0.1:8000/api`
+    baseURL: `${axiosBaseUrl}`
     // baseURL: `${import.meta.env.VITE_API_BASE_URL}/api`
 })
 

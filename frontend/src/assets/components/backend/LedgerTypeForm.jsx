@@ -16,6 +16,7 @@ export default function LedgerTypeForm() {
     name: '',
   })
   if(id){
+    console.log("idddd", useParams());
     useEffect( () =>{
       setLoading(true)
       axiosClient.get(`/accounts-ledgers/${id}`)

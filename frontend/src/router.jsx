@@ -58,6 +58,10 @@ const router = createBrowserRouter([
                 element: <BusinessType></BusinessType>
             },   
             {
+                path: '/businessType/new',
+                element: <BusinessTypeForm key="userCreate"/>
+            }, 
+            {
                 path: '/businessType/:id',
                 element: <BusinessTypeForm key="userUpdate"/>
             }, 
@@ -65,6 +69,10 @@ const router = createBrowserRouter([
                 path: '/ledgerType',
                 element: <LedgerType></LedgerType>
             },
+            {
+                path: '/ledgerType/new',
+                element: <LedgerTypeForm key="userCreate"/>
+            }, 
             {
                 path: '/ledgerType/:id',
                 element: <LedgerTypeForm key="userUpdate"/>
