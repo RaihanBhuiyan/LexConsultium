@@ -28,7 +28,7 @@ export default function DailyTransaction() {
     if(!window.confirm("Are you sure want to delete this user?")){
       return
     }
-    axiosClient.delete(`/business_types/${u.id}`)
+    axiosClient.delete(`/daily-transactions/${u.id}`)
       .then(() => {
         getUsers()
       })

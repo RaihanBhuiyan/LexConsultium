@@ -13,7 +13,7 @@ export default function Documents() {
 
   const getUsers = () =>{
     setLoading(true)
-    axiosClient.get('/business_types')
+    axiosClient.get('/documents')
       .then(({data}) =>{
         setLoading(false)
         setData(data.data)
@@ -28,7 +28,7 @@ export default function Documents() {
     if(!window.confirm("Are you sure want to delete this user?")){
       return
     }
-    axiosClient.delete(`/business_types/${u.id}`)
+    axiosClient.delete(`/documents/${u.id}`)
       .then(() => {
         getUsers()
       })
@@ -45,8 +45,23 @@ export default function Documents() {
           <thead>
             <tr>
               <th>ID</th >
-              <th>Busineess Type</th >
-              <th>Actions</th >
+              <th>Reference</th >
+              <th>Date</th >
+              <th>Business Type</th >
+              <th>Name of Bank</th >
+              <th>Account Name</th >
+              <th>Concern Lawyer</th >
+              <th>Receive Date</th >
+              <th>Delivery Date</th >
+              <th>File collect by</th >
+              <th>Type of works</th >
+              <th>File Status</th >
+              <th>Bill Send</th >
+              <th>Bill Received </th >
+              <th>Actual Cost</th >
+              <th>Profit</th >
+              <th>File Back</th >
+              <th>Action</th >
             </tr>
           </thead>
           {loading && <tbody>
