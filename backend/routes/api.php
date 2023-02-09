@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::get('/user', function (Request $request) {
         return $request->user();
     }); 
-    Route::post('/logout' , [\App\Http\Controllers\Api\AuthController::class,'logout']);
+    Route::post('/logout' , [AuthController::class,'logout']);
     Route::apiResource('/users' , UserController::class);
     Route::resource('business_types', App\Http\Controllers\API\BusinessTypesAPIController::class);    
     Route::resource('accounts-ledgers', App\Http\Controllers\API\AccountsLedgerAPIController::class)
@@ -31,8 +31,8 @@ Route::middleware('auth:sanctum')->group(function(){
     ->except(['create', 'edit']);    
     
 });
-Route::post('/signup' , [\App\Http\Controllers\Api\AuthController::class, 'signup']);
-Route::post('/login' , [\App\Http\Controllers\Api\AuthController::class, 'login']);
+Route::post('/signup' , [AuthController::class, 'signup']);
+Route::post('/login' , [AuthController::class, 'login']);
 
 
 Route::resource('employees', App\Http\Controllers\API\EmployeeAPIController::class)
