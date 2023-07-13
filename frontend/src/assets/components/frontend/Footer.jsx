@@ -18,7 +18,7 @@ export default function Footer() {
 
 						{/* <!-- Single Widget --> */}
 						<section className="widget widget-about">
-							<h5 className="widget-title">ABOUT JAMJAM</h5>
+							<h5 className="widget-title">ABOUT LexConsultium</h5>
 							<p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium oloremque laudantium, totam rem onsectetur sires
 								to obtain pain of itself because</p>
 							<div className="social-icons social-icons--rounded">
@@ -98,7 +98,7 @@ export default function Footer() {
 							<h5 className="widget-title">Address</h5>
 							<ul>
 								<li>
-									<p>JAMJAM TAX SERVICES</p>
+									<p>LexConsultium TAX SERVICES</p>
 								</li>
 								<li>
 									<p>Unit 4 & 5, 1205 Walpole Ave</p>
@@ -111,7 +111,7 @@ export default function Footer() {
 								</li>
 								<li>
 									<p>
-										<a href="mailto://info@jamjamtax.ca">info@jamjamtax.ca</a>
+										<a href="mailto://info@LexConsultiumtax.ca">info@LexConsultiumtax.ca</a>
 									</p>
 								</li>
 							</ul>
@@ -127,8 +127,8 @@ export default function Footer() {
 			<div className="footer-area__copyright bg--dark">
 				<div className="container">
 					<div className="copyright text-center">
-						{/* <!-- <p>&copy; 2022 <span> JAMJAM  </span> Made with <i className="fa fa-heart"></i> by <a href="#">AR</a></p> --> */}
-						<p>&copy; 2023 <span> JAMJAM TAX SERVICES</span> </p>
+						{/* <!-- <p>&copy; 2022 <span> LexConsultium  </span> Made with <i className="fa fa-heart"></i> by <a href="#">AR</a></p> --> */}
+						<p>&copy; 2023 <span> LexConsultium TAX SERVICES</span> </p>
 					</div>
 				</div>
 			</div>

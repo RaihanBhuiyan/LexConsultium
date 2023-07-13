@@ -29,15 +29,16 @@ Route::middleware('auth:sanctum')->group(function(){
     ->except(['create', 'edit']);
     Route::resource('documents', App\Http\Controllers\API\DocumentsAPIController::class)
     ->except(['create', 'edit']);    
+    Route::resource('work-types', App\Http\Controllers\API\WorkTypeAPIController::class)
+    ->except(['create', 'edit']);    
+    Route::resource('employees', App\Http\Controllers\API\EmployeeAPIController::class)
+    ->except(['create', 'edit']);
+
+    Route::resource('work-schedules', App\Http\Controllers\API\WorkScheduleAPIController::class)
+    ->except(['create', 'edit']);    
     
 });
 Route::post('/signup' , [AuthController::class, 'signup']);
 Route::post('/login' , [AuthController::class, 'login']);
-
-
-Route::resource('employees', App\Http\Controllers\API\EmployeeAPIController::class)
-    ->except(['create', 'edit']);
-
-
 
 

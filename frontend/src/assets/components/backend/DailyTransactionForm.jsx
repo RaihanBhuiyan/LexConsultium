@@ -16,7 +16,9 @@ export default function DailyTransactionForm() {
     id: null,
     date: '',
     accounts_ledger_id: '',
+    transaction_type: '',
     amount: '',
+    remarks: ''
   });
   useEffect( () =>{
     if(id){
@@ -100,17 +102,26 @@ export default function DailyTransactionForm() {
         )}
         {!loading && 
           <form onSubmit={onSubmit}>
+            <label for="html">Date</label>
             <input onChange={ev => setData({...getData, date: ev.target.value})} value={getData.date} placeholder='Date' type='date' />
-            
+            <label for="html">Ledger Type</label>
             <select onChange={ev => setData({...getData, accounts_ledger_id: ev.target.value})} value={getData.accounts_ledger_id} placeholder='Select Ledger'>
             <option value=''> Select Ledger Type</option>
             {getLedger.map( u => (   
               <option value={u.id}> {u.name}</option>
             ))}
             </select> 
-            
-            <br></br> 
+            <label for="html">Transaction Type</label>
+            <select onChange={ev => setData({...getData, transaction_type: ev.target.value})} value={getData.transaction_type} placeholder='Select Transaction Type'>
+            <option value=''> Select Transaction Type</option>
+              <option value="0">Income</option>
+              <option value="1">Expence</option>
+            </select>             
+            <label for="html">Amount</label>
             <input onChange={ev => setData({...getData, amount: ev.target.value})} value={getData.amount}  placeholder='amount'  />
+            <label for="html">Remarks</label>
+            <textarea rows="4"  cols="50" onChange={ev => setData({...getData, remarks: ev.target.value})} value={getData.remarks}  placeholder='remarks'></textarea>
+            <label for="html"></label><br></br><br></br>
             <button className='btn'>Save</button>          
           </form>
         }

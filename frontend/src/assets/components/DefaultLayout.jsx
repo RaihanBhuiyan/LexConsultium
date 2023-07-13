@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Link, Navigate, Outlet } from 'react-router-dom'
 import axiosClient from '../../axios-client'
 import { useStateConText } from '../../contexts/ContextProvider'
-
+import "react-datepicker/dist/react-datepicker.css";
 import '../../index2.css'
 
 export default function DefaultLayout() {
@@ -22,10 +22,12 @@ export default function DefaultLayout() {
   }
   
   useEffect(() => {
-    axiosClient.get('/user')
-    .then((data)=>{
-      setUser(data.data)
-    })
+    if(Object.keys(user).length == 0){
+      axiosClient.get('/user')
+      .then((data)=>{
+        setUser(data.data)
+      })
+    }
   }, [])
   return (
     <div id="defaultLayout">
@@ -36,9 +38,11 @@ export default function DefaultLayout() {
         <Link to="/dashboard" > Library </Link>   */}
         <Link to="/documents" > Documents </Link>  
         <Link to="/daily_transaction" > Daily Transaction </Link>  
+        <Link to="/workSchedule" > Work Schedule Entry </Link>  
         <Link to="/users" > Users </Link>  
         <Link to="/businessType" > Business Type </Link>  
         <Link to="/ledgerType" > Ledger Entry</Link> 
+        <Link to="/workType" > Work Type Entry</Link> 
       </aside>
       <div className='content'>
         <header>

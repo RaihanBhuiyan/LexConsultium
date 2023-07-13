@@ -19,7 +19,7 @@ export default function OffCanvas() {
 					<a href="#"><i className="flaticon-old-typical-phone"></i> (306) 241-0316</a>
 				</li>
 				<li>
-					<a href="#"><i className="flaticon-black-back-closed-envelope-shape"></i> info@jamjamtax.ca</a>
+					<a href="#"><i className="flaticon-black-back-closed-envelope-shape"></i> info@LexConsultiumtax.ca</a>
 				</li>
 			</ul>
 

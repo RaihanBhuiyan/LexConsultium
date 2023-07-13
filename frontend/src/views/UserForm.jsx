@@ -15,6 +15,7 @@ export default function UserForm() {
     id: null,
     name: '',
     email: '',
+    role : '',
     password: '',
     password_confirmation: '' 
   })
@@ -82,9 +83,21 @@ export default function UserForm() {
         )}
         {!loading && 
           <form onSubmit={onSubmit}>
+            <label htmlFor="html">User Name</label>   
             <input onChange={ev => setUser({...user, name: ev.target.value})} value={user.name} placeholder='name' />
+            <label htmlFor="html">Email</label>  
             <input onChange={ev => setUser({...user, email: ev.target.value})} value={user.email} placeholder='Email' />
+            <label htmlFor="html">Role</label>  
+            <select onChange={ev => setData({...getData, role: ev.target.value})} value={user.role} placeholder='role'>
+              <option >-- Select Role --</option>
+              <option value={0}>Admin</option>
+              <option value={1}>Lawyer</option>
+              <option value={2}>Employee</option>
+              <option value={3}>Sales</option>
+            </select>  
+            <label htmlFor="html">Password</label>           
             <input onChange={ev => setUser({...user, password: ev.target.value})} placeholder='Password' />
+            <label htmlFor="html">Confirmed Password</label>  
             <input onChange={ev => setUser({...user, password_confirmation: ev.target.value})} placeholder='Password Confirmation' />
             <button className='btn'>Save</button>          
           </form>

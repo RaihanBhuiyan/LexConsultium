@@ -11,9 +11,9 @@ export default function TopBanner() {
 					<div className="row">
 						<div className="col-xl-7 col-lg-8">
 							<div className="banner__single__content">
-								<h1>WORRIED
-									<span className="color--theme">ABOUT TAX?</span> WE ARE EXPERT IN
-									<span className="color--theme">TAX</span> SOLUTIONS</h1>
+								<h1>From 
+									<span className="color--theme"> legal headaches to legal solutions ?</span> trust us 
+									<span className="color--theme"> to</span> handle it all</h1>
 								<a href="contact.php" className="cr-btn">
 									<span>Contact Now</span>
 								</a>
@@ -30,9 +30,9 @@ export default function TopBanner() {
 					<div className="row justify-content-center">
 						<div className="col-lg-8">
 							<div className="banner__single__content text-center">
-								<h1>WORRIED
-									<span className="color--theme">ABOUT TAX?</span> WE ARE EXPERT IN
-									<span className="color--theme">TAX</span> SOLUTIONS</h1>
+								<h1>Navigating legal problems 
+									<span className="color--theme"> is our expertise?</span> let us guide you
+									<span className="color--theme"> to </span> a solution</h1>
 								<a href="contact.html" className="cr-btn">
 									<span>Contact Now</span>
 								</a>
@@ -49,9 +49,9 @@ export default function TopBanner() {
 					<div className="row">
 						<div className="col-xl-7 col-lg-8">
 							<div className="banner__single__content">
-								<h1>WORRIED
-									<span className="color--theme">ABOUT TAX?</span> WE ARE EXPERT IN
-									<span className="color--theme">TAX</span> SOLUTIONS</h1>
+								<h1>Legal problems
+									<span className="color--theme">don't have to be daunting?</span>our team specializes
+									<span className="color--theme"> in </span> finding solutions.</h1>
 								<a href="contact.html" className="cr-btn">
 									<span>Contact Now</span>
 								</a>

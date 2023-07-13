@@ -5,6 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\BusinessTypes;
 use App\Models\User;
+use App\Models\WorkType;
 return new class extends Migration
 {
     /**
@@ -25,7 +26,7 @@ return new class extends Migration
             $table->date('r_date');
             $table->date('d_date');
             $table->integer('collect_by');
-            $table->string('work_type');
+            $table->foreignIdFor(WorkType::class);
             $table->string('status');
             $table->float('bill_send');
             $table->float('bill_received');

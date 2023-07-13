@@ -2,9 +2,9 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axiosClient from '../../../axios-client';
-export default function DailyTransaction() {
-  const [data , setData] = useState([]);
+import axiosClient from '../../../../axios-client';
+export default function WorkType() {
+  const [users , setUsers] = useState([]);
   const [loading , setLoading] = useState(false)
   
   useEffect(() =>{
@@ -13,11 +13,11 @@ export default function DailyTransaction() {
 
   const getUsers = () =>{
     setLoading(true)
-    axiosClient.get('/daily-transactions')
+    axiosClient.get('/work-types')
       .then(({data}) =>{
         setLoading(false)
-        setData(data.data)
-        console.log(users);
+        setUsers(data.data)
+        // console.log(users);
       })
       .catch(() =>{
         setLoading(false)
@@ -28,7 +28,7 @@ export default function DailyTransaction() {
     if(!window.confirm("Are you sure want to delete this user?")){
       return
     }
-    axiosClient.delete(`/daily-transactions/${u.id}`)
+    axiosClient.delete(`/work-types/${u.id}`)
       .then(() => {
         getUsers()
       })
@@ -37,19 +37,15 @@ export default function DailyTransaction() {
   return (
     <div>
       <div style={{display: 'flex' ,justifyContent: 'space-between' , alignItems: 'center'}}>
-        <h1>Daily Transaction</h1>
-        <Link to='/daily_transaction/new' className='btn-add'>Add New</Link>
+        <h1>Work Types</h1>
+        <Link to='/workType/new' className='btn-add'>Add New</Link>
       </div>
       <div className='card animated fadeinDown'>
         <table>
           <thead>
             <tr>
               <th>ID</th >
-              <th>Date</th >
-              <th>Ledger</th >
-              <th>Transaction Type</th >
-              <th>Remarks</th >
-              <th>Amount</th >
+              <th>Name</th >
               <th>Actions</th >
             </tr>
           </thead>
@@ -61,16 +57,12 @@ export default function DailyTransaction() {
           }
           {!loading && 
           <tbody>
-            {data.map( u => ( 
+            {users.map( u => ( 
               <tr key={u.id}>
                 <td>{u.id}</td>
-                <td>{u.date}</td>
-                <td>{u.ledger.name}</td>
-                <td>{u.ledger.transaction_type==1?'Income':'Expense'}</td>
-                <td>{u.ledger.remarks}</td>
-                <td>{u.amount}</td>
+                <td>{u.name}</td>
                 <td>
-                  <Link className='btn-edit' to={'/daily_transaction/'+u.id}>Edit</Link>
+                  <Link className='btn-edit' to={'/workType/'+u.id}>Edit</Link>
                   &nbsp;
                   <button onClick={ev => onDelete(u)} className="btn-delete">Delete</button>
                 </td>

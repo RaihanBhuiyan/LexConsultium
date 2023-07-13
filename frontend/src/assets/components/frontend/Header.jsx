@@ -12,18 +12,18 @@ export default function Header() {
 					<div className="header__top__inner">
 						<ul className="header__top__info">
 							<li>
-								<a href="#"><i className="flaticon-old-typical-phone"></i> (306) 241-0316</a>
+								<a href="#"><i className="flaticon-old-typical-phone"></i> +8801894921471</a>
 							</li>
 							<li>
-								<a href="#"><i className="flaticon-black-back-closed-envelope-shape"></i> info@jamjamtax.ca</a>
+								<a href="#"><i className="flaticon-black-back-closed-envelope-shape"></i> adv.badrul@gmail.com</a>
 							</li>
 						</ul>
 						<div className="header__top__button">
-							<a className="cr-btn cr-btn--lg" href="appointment.php">
+							{/* <a className="cr-btn cr-btn--lg" href="appointment.php">
 								<Link className='cr-btn cr-btn--lg'  to={'/login'}>
 									User Login
 								</Link>
-							</a>
+							</a> */}
 						</div>
 					</div>
 				</div>

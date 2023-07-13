@@ -17,7 +17,10 @@ import Documents from "./assets/components/backend/Documents";
 import DocumentsForm from "./assets/components/backend/DocumentsForm";
 import DailyTransaction from "./assets/components/backend/DailyTransaction";
 import DailyTransactionForm from "./assets/components/backend/DailyTransactionForm";
-
+import WorkType from "./assets/components/backend/workType/WorkType";
+import WorkTypeForm from "./assets/components/backend/workType/WorkTypeForm";
+import WorkSchedule from "./assets/components/backend/workSchedule/WorkSchedule";
+import WorkScheduleForm from "./assets/components/backend/workSchedule/WorkScheduleForm";
 const router = createBrowserRouter([
     {
         path:'/',
@@ -41,6 +44,18 @@ const router = createBrowserRouter([
                 path:'/dashboard',
                 element:<Dashboard></Dashboard>
             },
+            {
+                path: '/workSchedule',
+                element: <WorkSchedule></WorkSchedule>
+            },
+            {
+                path: '/workSchedule/new',
+                element: <WorkScheduleForm key="create"></WorkScheduleForm>
+            }, 
+            {
+                path: '/workSchedule/:id',
+                element: <WorkScheduleForm key="update" />
+            },            
             {
                 path: '/users',
                 element: <Users></Users>
@@ -77,6 +92,18 @@ const router = createBrowserRouter([
                 path: '/ledgerType/:id',
                 element: <LedgerTypeForm key="userUpdate"/>
             }, 
+            {
+                path: '/workType',
+                element: <WorkType></WorkType>
+            },
+            {
+                path: '/workType/new',
+                element: <WorkTypeForm key="create" />
+            }, 
+            {
+                path: '/workType/:id',
+                element: <WorkTypeForm key="update" />
+            },               
             {
                 path: '/documents',
                 element: <Documents></Documents>

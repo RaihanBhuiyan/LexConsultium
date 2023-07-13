@@ -2,14 +2,14 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import axiosClient from '../../../axios-client';
-import { useStateConText } from '../../../contexts/ContextProvider'
+import axiosClient from '../../../../axios-client';
+import { useStateConText } from '../../../../contexts/ContextProvider'
 
-export default function LedgerTypeForm() {
+export default function WorkTypeForm() {
   const {id} = useParams()
   const navigate = useNavigate();
   const [loading , setLoading] = useState(false)
-  const [errors , setErrors] = useState(null);  
+  const [errors , setErrors] = useState(null) 
   const {setNotification} = useStateConText()
   const [getData, setData] = useState({
     id: null,
@@ -19,11 +19,11 @@ export default function LedgerTypeForm() {
     // console.log("idddd", useParams());
     useEffect( () =>{
       setLoading(true)
-      axiosClient.get(`/accounts-ledgers/${id}`)
+      axiosClient.get(`/work-types/${id}`)
         .then(({data})=>{
           setLoading(false)
           setData(data.data)
-          console.log(data);
+          // console.log(data);
         })
         .catch((err) => {
           setLoading(false)
@@ -37,10 +37,10 @@ export default function LedgerTypeForm() {
   const onSubmit = (ev) =>{
     ev.preventDefault();
     if(getData.id){
-      axiosClient.put(`/accounts-ledgers/${id}` ,getData)
+      axiosClient.put(`/work-types/${id}` ,getData)
         .then(() => {
-          setNotification('User was successfully updated')
-          navigate('/ledgerType')
+          setNotification('Data was successfully updated')
+          navigate('/workType')
         })        
         .catch((err) => {
           setLoading(false)
@@ -50,10 +50,10 @@ export default function LedgerTypeForm() {
           }
         })
     }else{
-      axiosClient.post(`/accounts-ledgers` ,getData)
+      axiosClient.post(`/work-types` ,getData)
         .then(() => {
-          setNotification('New user added successfully')
-          navigate('/ledgerType')
+          setNotification('New Data added successfully')
+          navigate('/workType')
         })        
         .catch((err) => {
           setLoading(false)
@@ -66,8 +66,8 @@ export default function LedgerTypeForm() {
   }
   return (
     <div>
-      {getData.id && <h1> Update Ledger </h1>}
-      {!getData.id && <h1>New Ledger </h1>}
+      {getData.id && <h1> Update Work Type </h1>}
+      {!getData.id && <h1>Work Type </h1>}
       {errors && <div className='alert'>
         {Object.keys(errors).map(key => (
           <p key={key}>{errors[key][0]}</p>

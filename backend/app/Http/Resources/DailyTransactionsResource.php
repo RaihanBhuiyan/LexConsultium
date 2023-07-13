@@ -21,6 +21,8 @@ class DailyTransactionsResource extends JsonResource
             'date' => date('Y-m-d',strtotime($this->date)),
             'amount' => $this->amount,
             'ledger' => new LedgerResource(AccountsLedger::find($this->id)),       
+            'transaction_type' => $this->transaction_type,       
+            'remarks' => $this->remarks,       
         ];
     }
 }

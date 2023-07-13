@@ -1,12 +1,13 @@
 import React from 'react'
 import TopBanner from '../../assets/components/frontend/TopBanner';
 import OffCanvas from '../../assets/components/frontend/OffCanvas';
-
+// import CarouselSlider from '../../assets/components/frontend/CarouselSlider.jsx';
 export default function Home() {
   return (
     <>
-    <TopBanner></TopBanner>
-    <OffCanvas></OffCanvas>
+    {/* <TopBanner></TopBanner> */}
+    {/* <OffCanvas></OffCanvas> */}
+    {/* <CarouselSlider></CarouselSlider> */}<br></br>
     <main className="page-content">
 
     {/* <!-- About Area --> */}
@@ -22,20 +23,20 @@ export default function Home() {
             <div className="col-lg-7">
               <div className="about-area__content">
                 <h4>WE ARE “
-                  <span className="color--theme">JAMJAM</span>”</h4>
-                <h3 className="cd-headline cx-heading slide">PROVIDE BEST TAX SOLUTION FOR YOUR
+                  <span className="color--theme">LexConsultium</span>”</h4>
+                <h3 className="cd-headline cx-heading slide">Our cutting-edge legal solutions offer a 
                   <span className="color--theme cd-words-wrapper cd-words-wrapper-2">
-                    <b className="is-visible">Business</b>
-                    <b>Performance</b>
-                    <b>Success</b>
+                    <b className="is-visible">unique approach to the </b>
+                    <b className="is-visible">  corporate and litigation sector, </b>
+                    <b className="is-visible"> delivering measurable results </b>
                   </span>
-                  TO GROWUP</h3>
-                <p>We are a full-service income tax, accounting and notary public firm offering personalized services tailored to your needs</p>
-                <p>Our experienced professionals provide high quality and cost-effective services that help you meet your financial goals.</p>
+                  and driving sustainable growth.</h3>
+                  <p>LexConsultium is a highly respected law firm in Bangladesh that provides a comprehensive range of legal services to both national and international clients. With a strong reputation for professional excellence in areas such as banking, finance, taxation, and corporate matters, the firm is comprised of a talented team of young and energetic lawyers who are dedicated to achieving positive legal outcomes for their clients</p>
+                  <p>LexConsultium prides itself on providing highly professional, efficient, and cost-effective legal assistance and advice to clients in a timely manner. Whether clients need assistance with a specific legal matter or require a step-by-step approach, the firm's expert team of lawyers is committed to delivering successful, sustainable solutions. The firm's focus is on providing high-quality legal services to clients, and its lawyers work closely with clients to understand their unique business needs and objectives, providing customized legal solutions to help them achieve their goals.</p>
                   
-                <a href="about-us.html" className="cr-btn">
+                {/* <a href="about-us.html" className="cr-btn">
                   <span>Read More</span>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
@@ -63,7 +64,8 @@ export default function Home() {
               <h4 className="wow fadeInUp">
                 <a href="features.html">ENSURE SECURITY</a>
               </h4>
-              <p className="wow fadeInUp" data-wow-delay="0.15s">Perspiciatis unde omnis ist natus error sit voluptatem accusantium loremque tium totam rem aperiam eaque </p>
+              <p className="wow fadeInUp" data-wow-delay="0.15s">
+              LEXCONSULTIUM employs advanced technology and encryption methods to safeguard client data and transactions. The company also has strict security protocols and regularly conducts audits to identify and address potential vulnerabilities.</p>
             </div>
           </div>
         </div>
@@ -84,7 +86,10 @@ export default function Home() {
               <h4 className="wow fadeInUp">
                 <a href="features.html">EXPERT TEAM</a>
               </h4>
-              <p className="wow fadeInUp" data-wow-delay="0.15s">Perspiciatis unde omnis ist natus error sit voluptatem accusantium loremque tium totam rem aperiam eaque </p>
+              <p className="wow fadeInUp" data-wow-delay="0.15s">
+              Expert teams at Lexconsultium are carefully assembled with professionals from diverse backgrounds to ensure a comprehensive approach to problem-solving. Our team members possess a range of skills and expertise,
+               allowing us to tackle complex issues and deliver innovative solutions to our clients.                
+                </p>
             </div>
           </div>
         </div>
@@ -105,7 +110,8 @@ export default function Home() {
               <h4 className="wow fadeInUp">
                 <a href="features.html">24/7 SUPPORT</a>
               </h4>
-              <p className="wow fadeInUp" data-wow-delay="0.15s">Perspiciatis unde omnis ist natus error sit voluptatem accusantium loremque tium totam rem aperiam eaque </p>
+              <p className="wow fadeInUp" data-wow-delay="0.15s">
+              At LexConsultium, we understand the importance of reliable support for our clients. That's why we offer 24/7 support to ensure that any issues or concerns are promptly addressed. Our dedicated support team is available around the clock to provide timely and effective assistance, giving you peace of mind and uninterrupted service. </p>
             </div>
           </div>
         </div>
@@ -143,9 +149,9 @@ export default function Home() {
                     </div>
                     <div className="service__content">
                       <h5>
-                        <a href="single-service.html">PERSONAL TAX</a>
+                        <a href="single-service.html">Banking  Financial Services</a>
                       </h5>
-                      <p>Perspiciatis unde omnis ist natus error sit voluptatem accusantium loremque tium totam rem per </p>
+                      <p>The security documentation includes various deeds, letters, and agreements such as Mortgage, Power of Attorney, Corporate Guarantee, Tripartite Agreement, etc., which are used in asset financing, syndicated lending, debt restructuring, project finance, and structured finance. </p>
                     </div>
                   </div>
                 </div>
@@ -159,9 +165,10 @@ export default function Home() {
                     </div>
                     <div className="service__content">
                       <h5>
-                        <a href="single-service.html">CORPORATE TAX</a>
+                        <a href="single-service.html">Corporate Real Estate and Property</a>
                       </h5>
-                      <p>Perspiciatis unde omnis ist natus error sit voluptatem accusantium loremque tium totam rem per </p>
+                      <p>LexConsultium provides comprehensive services for property document vetting, development projects, leases, joint ventures, and property restructuring. They assist with mortgages, powers, and registration of deeds at land registry offices, as well as obtaining non-encumbrance certificates and conducting mutation formalities.
+                         LexConsultium also engages surveyors for land surveying. </p>
                     </div>
                   </div>
                 </div>
@@ -175,9 +182,9 @@ export default function Home() {
                     </div>
                     <div className="service__content">
                       <h5>
-                        <a href="single-service.html">Business TAX</a>
+                        <a href="single-service.html">Corporate and Commercial</a>
                       </h5>
-                      <p>Perspiciatis unde omnis ist natus error sit voluptatem accusantium loremque tium totam rem per </p>
+                      <p>At Lexconsultium, we offer a range of corporate services to meet our clients' needs. Our corporate advisory services provide strategic and practical advice to help clients navigate complex corporate issues. We also assist with corporate compliance and secretarial services, ensuring that clients comply with regulatory requirements. Our team provides services at the Registrar of Joint Stock Companies & Firms, including the incorporation of companies and obtaining search reports. We also facilitate registration of mortgages/charges and obtaining certified copies of various corporate documents. We provide legal advice on commercial transactions, telecommunications, broadcasting, employment, energy, infrastructure, insurance, intellectual property, and private equity and investment. </p>
                     </div>
                   </div>
                 </div>
@@ -191,9 +198,9 @@ export default function Home() {
                     </div>
                     <div className="service__content">
                       <h5>
-                        <a href="single-service.html">Notary Public</a>
+                        <a href="single-service.html">Litigation and dispute resolution</a>
                       </h5>
-                      <p>Perspiciatis unde omnis ist natus error sit voluptatem accusantium loremque tium totam rem per </p>
+                      <p>LexConsultium offers a wide range of legal services, including corporate advisory, compliance and secretarial services, as well as debt recovery, bankruptcy, and property-related matters. The firm also provides services for commercial transactions, telecommunications, employment, energy, insurance, intellectual property, private equity, and investment. Additionally, LexConsultium handles criminal and civil matters, arbitration, and judicial reviews. </p>
                     </div>
                   </div>
                 </div>
@@ -421,7 +428,7 @@ export default function Home() {
               <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque
                 ipsa Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci </p>
               <h6>JUST DAIL
-                <a href="callto://(306) 241-0316">(306) 241-0316</a></h6>
+                <a href="callto://+88018949214716">+8801894921471</a></h6>
             </div>
           </div>
         </div>

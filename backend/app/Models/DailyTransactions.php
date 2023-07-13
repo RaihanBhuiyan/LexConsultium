@@ -11,7 +11,9 @@ class DailyTransactions extends Model
     public $fillable = [
         'date',
         'accounts_ledger_id',
-        'amount'
+        'amount',
+        'transaction_type',
+        'remarks',
     ];
 
     protected $casts = [

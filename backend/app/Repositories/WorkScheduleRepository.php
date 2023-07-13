@@ -2,17 +2,15 @@
 
 namespace App\Repositories;
 
-use App\Models\DailyTransactions;
+use App\Models\WorkSchedule;
 use App\Repositories\BaseRepository;
 
-class DailyTransactionsRepository extends BaseRepository
+class WorkScheduleRepository extends BaseRepository
 {
     protected $fieldSearchable = [
         'date',
-        'ledger',
-        'amount',
-        'transaction_type',
-        'remarks'
+        'user_id',
+        'details'
     ];
 
     public function getFieldsSearchable(): array
@@ -22,6 +20,6 @@ class DailyTransactionsRepository extends BaseRepository
 
     public function model(): string
     {
-        return DailyTransactions::class;
+        return WorkSchedule::class;
     }
 }

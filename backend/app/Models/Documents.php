@@ -18,13 +18,14 @@ class Documents extends Model
         'r_date' ,
         'd_date',
         'collect_by' ,
-        'work_type' ,
+        'work_type_id' ,
         'status',
         'bill_send' ,
         'bill_received' ,
         'actual_cost' ,
         'profite' ,
-        'file_back'   
+        'file_back',
+        'file'
     ];
 
     protected $casts = [
@@ -35,5 +36,19 @@ class Documents extends Model
         
     ];
 
+    public function userJoin()
+    {
+        return $this->hasOne(User::class , 'id','user_id');
+    }
+
+    public function businessTypesJoin()
+    {
+        return $this->hasOne(BusinessTypes::class ,'id', 'business_types_id');
+    }   
+    
+    public function WorkTypesJoin()
+    {
+        return $this->hasOne(WorkType::class ,'id', 'work_type_id');
+    }       
     
 }

@@ -41,12 +41,12 @@ export default function Documents() {
         <Link to='/documents/new' className='btn-add'>Add New</Link>
       </div>
       <div className='card animated fadeinDown'>
-        <table>
+        <table className="table table-striped table-bordered">
           <thead>
             <tr>
               <th>ID</th >
               <th>Reference</th >
-              <th>Date</th >
+              <th>Entry Date</th >
               <th>Business Type</th >
               <th>Name of Bank</th >
               <th>Account Name</th >
@@ -77,6 +77,21 @@ export default function Documents() {
               <tr key={u.id}>
                 <td>{u.id}</td>
                 <td>{u.b_name}</td>
+                <td>{u.e_date}</td>
+                <td>{u.business_types.b_name}</td>
+                <td>{u.bank}</td>
+                <td>{u.b_name}</td>
+                <td>{u.concern_lawyer.name}</td>
+                <td>{u.r_date}</td>
+                <td>{u.d_date}</td>
+                <td>{u.collect_by.name}</td>
+                <td>{u.work_type.name}</td>
+                <td>{u.status}</td>
+                <td>{u.bill_send}</td>
+                <td>{u.bill_received}</td>
+                <td>{u.actual_cost}</td>
+                <td>{u.profite}</td>
+                <td>{u.file_back}</td>
                 <td>
                   <Link className='btn-edit' to={'/documents/'+u.id}>Edit</Link>
                   &nbsp;

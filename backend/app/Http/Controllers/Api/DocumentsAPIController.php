@@ -9,7 +9,7 @@ use App\Repositories\DocumentsRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
-
+use App\Http\Resources\DocumentsResource;
 /**
  * Class DocumentsAPIController
  */
@@ -33,18 +33,25 @@ class DocumentsAPIController extends AppBaseController
             $request->get('skip'),
             $request->get('limit')
         );
-
-        return $this->sendResponse($documents->toArray(), 'Documents retrieved successfully');
+        $data = DocumentsResource::collection($documents);
+        return $this->sendResponse($data, 'Documents retrieved successfully');
+        // return $this->sendResponse($documents->toArray(), 'Documents retrieved successfully');
     }
 
     /**
      * Store a newly created Documents in storage.
      * POST /documents
      */
-    public function store(CreateDocumentsAPIRequest $request): JsonResponse
+    public function store(CreateDocumentsAPIRequest $request)//: JsonResponse
     {
         $input = $request->all();
-
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $filename = $file->getClientOriginalName();
+            $file->move(public_path('file'), $filename);
+            $input['file'] = time();//$filename;
+        }
+        // return $input['file'];        
         $documents = $this->documentsRepository->create($input);
 
         return $this->sendResponse($documents->toArray(), 'Documents saved successfully');
