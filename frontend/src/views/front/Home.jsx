@@ -417,7 +417,6 @@ export default function Home() {
 
     {/* <!-- Call To Action Area --> */}
     <section id="cta-area" className="cta-area section-padding--sm bg--grey--light bg--abstruct-mask">
-
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-10">

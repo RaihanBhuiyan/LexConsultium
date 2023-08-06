@@ -4,6 +4,10 @@ import GuestLayout from "./assets/components/GuestLayout";
 import FrontendLayout from "./assets/components/FrontendLayout";
 import Dashboard from "./views/Dashboard";
 import Home from "./views/front/Home";
+import About from "./views/front/About";
+import Contact from "./views/front/Contact";
+import Feature from "./views/front/Feature";
+import Service from "./views/front/Service";
 import Login from "./views/Login";
 import NotFound from "./views/NotFound";
 import Signup from "./views/Signup";
@@ -29,7 +33,23 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-            }
+            },
+            {
+                path: '/about',
+                element: <About></About>,
+            },  
+            {
+                path: '/feature',
+                element: <Feature></Feature>,
+            }, 
+            {
+                path: '/service',
+                element: <Service></Service>,
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>,
+            },                                                 
         ],
     },
     {

@@ -43,6 +43,11 @@ export default function Footer() {
 											<i className="fa fa-google-plus"></i>
 										</a>
 									</li>
+									<li className="google-plus">
+										<a href="/login">
+										<i class="fa-thin fa-user"></i>
+										</a>
+									</li>									
 								</ul>
 							</div>
 						</section>
