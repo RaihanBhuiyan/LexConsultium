@@ -37,7 +37,7 @@ export default function Header() {
 
 						<div className="header__logo">
 							<a href="index.html">
-								<img src="assets/images/logo/logo-theme-2.jpg" alt="header logo" />
+								<img src="assets/images/logo/logo.png" alt="header logo" />
 							</a>
 						</div>
 

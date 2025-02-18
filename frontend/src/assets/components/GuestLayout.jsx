@@ -7,7 +7,7 @@ export default function GuestLayout() {
   const {token} = useStateConText()
   
   if(token){
-    return <Navigate to="/users" />
+    return <Navigate to="/documents" />
   }
 
   return (

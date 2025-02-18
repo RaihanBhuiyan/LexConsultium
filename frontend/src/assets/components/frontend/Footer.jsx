@@ -10,7 +10,7 @@ export default function Footer() {
 					<div className="footer-area__logo text-center">
 						<a href="index.html">
 							{/* <!-- <img src="assets/images/logo/old_logo/logo-footer.webp" alt="footer logo"> --> */}
-							<img src="assets/images/logo/logo-theme-2.png" alt="footer logo" />
+							<img src="assets/images/logo/logo.png" height={30} weight={30} alt="footer logo" />
 						</a>
 					</div>
 					
@@ -19,7 +19,7 @@ export default function Footer() {
 						{/* <!-- Single Widget --> */}
 						<section className="widget widget-about">
 							<h5 className="widget-title">ABOUT LexConsultium</h5>
-							<p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium oloremque laudantium, totam rem onsectetur sires
+							<p>Perspiciatis uphpnde omnis iste natus error sit voluptatem accusantium oloremque laudantium, totam rem onsectetur sires
 								to obtain pain of itself because</p>
 							<div className="social-icons social-icons--rounded">
 								<ul>

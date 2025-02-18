@@ -92,7 +92,10 @@ canvas,
 video {
   display: inline-block;
 }
-
+.cr-section.about-area {
+  background-color: white;
+  font-size: 18px; /* You can adjust the font size value as needed */
+}
 audio:not([controls]) {
   display: none;
   height: 0;
